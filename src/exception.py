@@ -1,5 +1,7 @@
 import sys
 import logging
+from src.logger import logging # Import the logging module from the src.logger module
+
 
 def error_message_detail(error, error_detail: sys):
     _, _, exc_tb = sys.exc_info() # Get the exception traceback information
@@ -17,12 +19,12 @@ class CustomException(Exception):
         return self.error_message
     
 
-
-if __name__ == "__main__":
-    try:
-        # Simulate an error for testing
-        1 / 0
-    except Exception as e:
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-        logging.error("An error occurred: %s", e)
-        raise CustomException(e, sys) # Raise the custom exception with the error message and detail
+# testing the custom exception
+# if __name__ == "__main__":
+#     try:
+#         # Simulate an error for testing
+#         a = 1 / 0
+#     except Exception as e:
+#         #logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+#         logging.info("An error occurred: %s", e)
+#         raise CustomException(e, sys) # Raise the custom exception with the error message and detail
