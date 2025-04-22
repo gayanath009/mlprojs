@@ -8,4 +8,5 @@ lightgbm
 catboost
 tensorflow
 torch
+dill
 -e . 
